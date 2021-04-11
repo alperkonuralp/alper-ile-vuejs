@@ -42,7 +42,7 @@
       if (this.filter) {
         return this.data
           .filter((i) => i.firstName.indexOf(this.filter) >= 0 
-						|| i.lastName.indexOf(this.filter) >= 0)
+            || i.lastName.indexOf(this.filter) >= 0)
           ;
       }
       return this.data;
