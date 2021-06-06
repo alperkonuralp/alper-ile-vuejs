@@ -1,0 +1,49 @@
+.app-header {
+	background: lightgray;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 50px;
+	padding: 5px 8px;
+
+	.app-header-logo {
+		float: left;
+		width: 35%;
+		text-align: left;
+
+
+		span {
+			height: 50px;
+			width: 50px;
+			float: left;
+			font-size: 45px;
+			cursor: pointer;
+		}
+
+
+		img {
+			height: 50px;
+			width: 50px;
+			background: blue;
+			float: left;
+		}
+
+		h1 {
+			float: left;
+			margin: 7px;
+		}
+	}
+
+	.app-header-search {
+		float: left;
+		width: 35%;
+		padding: 12px 0 0 0;
+	}
+
+	.app-header-menu {
+		float: left;
+		width: 30%;
+		text-align: right;
+	}
+}
