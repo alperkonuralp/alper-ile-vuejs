@@ -3,17 +3,19 @@
         <table style="width:100%">
             <thead>
                 <tr>
-                    <th v-for="column in columnList" 
-                        :key="column.fieldName">{{column.title}}</th>
+                    <HeaderColumn v-for="column in columnList" 
+                                  :key="column.fieldName"
+                                  :column="column"></HeaderColumn>
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="(row, index) in dataList"
                     :key="index">
-                    <td v-for="column in columnList"
-                        :key="'' + index + '-' + column.fieldName">
-                        {{ row[column.fieldName] }}
-                    </td>
+                    <DataColumn v-for="column in columnList"
+                                :key="'' + index + '-' + column.fieldName"
+                                :column="column"
+                                :row="row">
+                    </DataColumn>
                 </tr>
             </tbody>
         </table>
@@ -22,11 +24,19 @@
 
 <script lang="ts">
     import { Component, Prop, Vue } from "vue-property-decorator";
+    import { ColumnType } from './types';
+    import HeaderColumn from "./HeaderColumn.vue";
+    import DataColumn from "./DataColumn.vue";
 
-    @Component
+    @Component({
+        components: {
+            HeaderColumn,
+            DataColumn,
+        }
+    })
     export default class DataView extends Vue {
         @Prop({ required: true, type: Array })
-        private columnList!: { fieldName: string, title: string }[];
+        private columnList!: ColumnType[];
 
         @Prop({ required: false, type: Array })
         private dataList!: any[];

@@ -480,6 +480,7 @@
     import HelloWorld from "./components/HelloWorld.vue";
     import DataView from "./components/DataView.vue";
     import pageData from './data.json';
+    import { AlignType, ColumnType }from './components/types';
 
     @Component({
         components: {
@@ -489,8 +490,13 @@
     })
     export default class App extends Vue {
         private pageData = pageData;
-        private columns = [
-            { fieldName: "name", title: "Full Name" },
+        private columns: ColumnType[] = [
+            {
+                fieldName: "name",
+                title: "Full Name",
+                header: { align: AlignType.Left },
+                data: { align: AlignType.Left }
+            },
             { fieldName: "position", title: "Position" },
             { fieldName: "start-date", title: "Start Date" },
         ];
