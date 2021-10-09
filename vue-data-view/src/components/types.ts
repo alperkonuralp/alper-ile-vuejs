@@ -20,3 +20,7 @@ export interface ColumnType {
     data?: ColumnDataType;
 }
 
+export enum PagerType {
+    SimplePager,
+    DropDownPager,
+}

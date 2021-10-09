@@ -1,6 +1,12 @@
 <template>
   <div id="app">
-      <DataView :columnList="columns" :dataList="pageData" />
+      <DataView 
+                :columnList="columns" 
+                :dataList="pageData" 
+                title="Data View V:1.0"
+                showSearchBar
+                showPager
+                :pagerType="1"/>
       <table id="example" class="display" style="width:100%">
           <thead>
               <tr>
