@@ -1,26 +1,32 @@
 
 export enum AlignType {
-    Left,
-    Right,
-    Center,
+	Left,
+	Right,
+	Center,
 }
 
 export interface ColumnHeaderType {
-    align: AlignType;
+	align: AlignType;
 }
 
 export interface ColumnDataType {
-    align: AlignType;
+	align: AlignType;
 }
 
 export interface ColumnType {
-    fieldName: string;
-    title: string;
-    header?: ColumnHeaderType;
-    data?: ColumnDataType;
+	fieldName: string;
+	title: string;
+	header?: ColumnHeaderType;
+	data?: ColumnDataType;
 }
 
 export enum PagerType {
-    SimplePager,
-    DropDownPager,
+	SimplePager,
+	DropDownPager,
+}
+
+export type DataRow = Record<string, any>;
+
+export interface DataSource {
+	local: DataRow[];
 }

@@ -2,7 +2,7 @@
   <div id="app">
       <DataView 
                 :columnList="columns" 
-                :dataList="pageData" 
+                :dataSource="pageData" 
                 title="Data View V:1.0"
                 showSearchBar
                 showPager
@@ -482,31 +482,33 @@
 </template>
 
 <script lang="ts">
-    import { Component, Vue } from "vue-property-decorator";
-    import HelloWorld from "./components/HelloWorld.vue";
-    import DataView from "./components/DataView.vue";
-    import pageData from './data.json';
-    import { AlignType, ColumnType }from './components/types';
+  import { Component, Vue } from "vue-property-decorator";
+  import HelloWorld from "./components/HelloWorld.vue";
+  import DataView from "./components/DataView.vue";
+  import pageData from './data.json';
+  import { AlignType, ColumnType } from './components/types';
 
-    @Component({
-        components: {
-            HelloWorld,
-            DataView,
-        },
-    })
-    export default class App extends Vue {
-        private pageData = pageData;
-        private columns: ColumnType[] = [
-            {
-                fieldName: "name",
-                title: "Full Name",
-                header: { align: AlignType.Left },
-                data: { align: AlignType.Left }
-            },
-            { fieldName: "position", title: "Position" },
-            { fieldName: "start-date", title: "Start Date" },
-        ];
-    }
+  @Component({
+    components: {
+      HelloWorld,
+      DataView,
+    },
+  })
+  export default class App extends Vue {
+    private pageData = {
+      local: pageData
+    };
+    private columns: ColumnType[] = [
+      {
+        fieldName: "name",
+        title: "Full Name",
+        header: { align: AlignType.Left },
+        data: { align: AlignType.Left }
+      },
+      { fieldName: "position", title: "Position" },
+      { fieldName: "start-date", title: "Start Date" },
+    ];
+  }
 </script>
 
 <style lang="scss">

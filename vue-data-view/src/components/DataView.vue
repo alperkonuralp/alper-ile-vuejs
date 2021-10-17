@@ -11,7 +11,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(row, index) in dataList"
+                <tr v-for="(row, index) in pageData"
                     :key="index">
                     <DataColumn v-for="column in columnList"
                                 :key="'' + index + '-' + column.fieldName"
@@ -28,46 +28,58 @@
 </template>
 
 <script lang="ts">
-    import { Component, Prop, Vue } from "vue-property-decorator";
-    import { ColumnType, PagerType } from './types';
-    import HeaderColumn from "./HeaderColumn.vue";
-    import DataColumn from "./DataColumn.vue";
-    import Pager from "./Pager.vue";
-    import SearchBar from "./SearchBar.vue";
-    import TitleBar from "./TitleBar.vue";
+  import { Component, Prop, Vue } from "vue-property-decorator";
+  import { ColumnType, PagerType, DataSource, DataRow } from './types';
+  import HeaderColumn from "./HeaderColumn.vue";
+  import DataColumn from "./DataColumn.vue";
+  import Pager from "./Pager.vue";
+  import SearchBar from "./SearchBar.vue";
+  import TitleBar from "./TitleBar.vue";
+  import { DataService } from './data-service';
 
-    @Component({
-        components: {
-            HeaderColumn,
-            DataColumn,
-            Pager,
-            SearchBar,
-            TitleBar,
-        }
-    })
-    export default class DataView extends Vue {
-        @Prop({ required: true, type: Array })
-        private columnList!: ColumnType[];
-
-        @Prop({ required: false, type: Array })
-        private dataList!: any[];
-
-        @Prop({ required: false, type: String, default: () => '' })
-        private title!: string;
-
-        @Prop({ required: false, type: Boolean, default: () => false })
-        private showSearchBar!: boolean;
-
-        @Prop({ required: false, type: Boolean, default: () => true })
-        private showPager!: boolean;
-
-        @Prop({
-            required: false,
-            type: Number,
-            default: () => PagerType.SimplePager,
-        })
-        private pagerType!: PagerType;
+  @Component({
+    components: {
+      HeaderColumn,
+      DataColumn,
+      Pager,
+      SearchBar,
+      TitleBar,
     }
+  })
+  export default class DataView extends Vue {
+    // Data
+    private pageData: DataRow[] = [];
+    private dataService: DataService = new DataService();
+
+    // Props
+    @Prop({ required: true, type: Array })
+    private columnList!: ColumnType[];
+
+    @Prop({ required: false, type: Array })
+    private dataSource!: DataSource;
+
+    @Prop({ required: false, type: String, default: () => '' })
+    private title!: string;
+
+    @Prop({ required: false, type: Boolean, default: () => false })
+    private showSearchBar!: boolean;
+
+    @Prop({ required: false, type: Boolean, default: () => true })
+    private showPager!: boolean;
+
+    @Prop({
+      required: false,
+      type: Number,
+      default: () => PagerType.SimplePager,
+    })
+    private pagerType!: PagerType;
+
+    private mounted() {
+      this.dataService.dataSource = this.dataSource;
+
+      this.pageData = this.dataService.getPageData();
+    }
+  }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
