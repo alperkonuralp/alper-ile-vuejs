@@ -23,12 +23,16 @@
         </table>
         <Pager 
                v-if="showPager" 
-               :pagerType="pagerType"/>
+               :pagerType="pagerType"
+               :pageSizes="pageSizes"
+               :pageSize.sync="dataService.pageSize"
+              
+               />
     </div>
 </template>
 
 <script lang="ts">
-  import { Component, Prop, Vue } from "vue-property-decorator";
+  import { Component, Prop, Vue, Watch } from "vue-property-decorator";
   import { ColumnType, PagerType, DataSource, DataRow } from './types';
   import HeaderColumn from "./HeaderColumn.vue";
   import DataColumn from "./DataColumn.vue";
@@ -75,13 +79,31 @@
     private pagerType!: PagerType;
 
     @Prop({ required: false, type: Array, default: () => [10,25,50,100]})
-		private pageSizes!: Number[];
+    private pageSizes!: number[];
 
     private mounted() {
       this.dataService.dataSource = this.dataSource;
 
+      this.refresh();
+    }
+
+    private refresh() {
       this.pageData = this.dataService.getPageData();
     }
+
+    @Watch("dataSource", { deep: true })
+    private dataSourceChanged(newDataSource: DataSource) {
+      if (this.dataService.dataSource !== newDataSource) {
+        this.dataService.dataSource = newDataSource;
+      }
+      this.refresh();
+    }
+
+    @Watch("dataService.pageSize")
+    private pageSizeChanged() {
+      this.refresh();
+    }
+
   }
 </script>
 

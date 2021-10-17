@@ -4,7 +4,7 @@ export class DataService {
 	constructor(public dataSource: DataSource | null = null) {
 	}
 	public pageSize = 10;
-	public pageIndex = 6;
+	public pageIndex = 1;
 
 
 	public getPageData(): DataRow[] {
