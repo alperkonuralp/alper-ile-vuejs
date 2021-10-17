@@ -55,7 +55,7 @@
     @Prop({ required: true, type: Array })
     private columnList!: ColumnType[];
 
-    @Prop({ required: false, type: Array })
+    @Prop({ required: false, type: Object })
     private dataSource!: DataSource;
 
     @Prop({ required: false, type: String, default: () => '' })
@@ -73,6 +73,9 @@
       default: () => PagerType.SimplePager,
     })
     private pagerType!: PagerType;
+
+    @Prop({ required: false, type: Array, default: () => [10,25,50,100]})
+		private pageSizes!: Number[];
 
     private mounted() {
       this.dataService.dataSource = this.dataSource;

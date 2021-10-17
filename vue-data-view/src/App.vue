@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <button @click="addNewRow">Add New Row</button>
       <DataView 
                 :columnList="columns" 
                 :dataSource="pageData" 
@@ -508,6 +509,16 @@
       { fieldName: "position", title: "Position" },
       { fieldName: "start-date", title: "Start Date" },
     ];
+    private addNewRow() {
+			this.pageData.local.push({
+				"name": "Tiger Nixon",
+				"position": "System Architect",
+				"office": "Edinburgh",
+				"age": 61,
+				"start-date": "2011/04/25",
+				"salary": "320,800"
+			});
+		}
   }
 </script>
 
