@@ -26,6 +26,8 @@
                :pagerType="pagerType"
                :pageSizes="pageSizes"
                :pageSize.sync="dataService.pageSize"
+               :pageIndex.sync="dataService.pageIndex"
+               :totalRowCount="dataService.totalRowCount"
               
                />
     </div>
@@ -101,6 +103,11 @@
 
     @Watch("dataService.pageSize")
     private pageSizeChanged() {
+      this.refresh();
+    }
+
+    @Watch("dataService.pageIndex")
+    private pageIndexChanged() {
       this.refresh();
     }
 
