@@ -23,7 +23,8 @@
         </table>
         <Pager 
                v-if="showPager" 
-               :pagerType="pagerType"
+               :pagerType="innerPagerType"
+               @update:pagerType="updatePagerType"
                :pageSizes="pageSizes"
                :pageSize.sync="dataService.pageSize"
                :pageIndex.sync="dataService.pageIndex"
@@ -56,6 +57,7 @@
     // Data
     private pageData: DataRow[] = [];
     private dataService: DataService = new DataService();
+    private innerPagerType: PagerType = PagerType.SimplePager;
 
     // Props
     @Prop({ required: true, type: Array })
@@ -85,6 +87,7 @@
 
     private mounted() {
       this.dataService.dataSource = this.dataSource;
+      this.innerPagerType = this.pagerType;
 
       this.refresh();
     }
@@ -111,6 +114,15 @@
       this.refresh();
     }
 
+    @Watch("pagerType")
+    private pagerTypeChanged(pagerType: PagerType) {
+      this.innerPagerType = pagerType;
+    }
+
+    private updatePagerType(newPagerType: PagerType) {
+      this.innerPagerType = newPagerType;
+      this.$emit("update:pagerType", newPagerType);
+    }
   }
 </script>
 
