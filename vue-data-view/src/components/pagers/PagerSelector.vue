@@ -19,7 +19,7 @@
 	import { PagerType } from '../types';
 
 	@Component
-	export default class SimplePager extends Vue {
+	export default class PagerSelector extends Vue {
 		private showContainer = false;
 
 		@Prop({
@@ -84,7 +84,6 @@
 				li {
 					margin: 1px 0;
 					padding: 5px;
-					word-wrap: normal;
 					cursor: pointer;
 
 					&.active, &:hover {
