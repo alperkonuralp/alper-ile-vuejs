@@ -484,43 +484,50 @@
 </template>
 
 <script lang="ts">
-  import { Component, Vue } from "vue-property-decorator";
-  import HelloWorld from "./components/HelloWorld.vue";
-  import DataView from "./components/DataView.vue";
-  import pageData from './data.json';
-  import { AlignType, ColumnType } from './components/types';
+    import { Component, Vue } from "vue-property-decorator";
+    import HelloWorld from "./components/HelloWorld.vue";
+    import DataView from "./components/DataView.vue";
+    import pageData from './data.json';
+    import { AlignType, ColumnDataTypeEnum, ColumnType } from './components/types';
 
-  @Component({
-    components: {
-      HelloWorld,
-      DataView,
-    },
-  })
-  export default class App extends Vue {
-    private pageData = {
-      local: pageData
-    };
-    private columns: ColumnType[] = [
-      {
-        fieldName: "name",
-        title: "Full Name",
-        header: { align: AlignType.Left },
-        data: { align: AlignType.Left }
-      },
-      { fieldName: "position", title: "Position" },
-      { fieldName: "start-date", title: "Start Date" },
-    ];
-    private addNewRow() {
-			this.pageData.local.push({
-				"name": "Tiger Nixon",
-				"position": "System Architect",
-				"office": "Edinburgh",
-				"age": 61,
-				"start-date": "2011/04/25",
-				"salary": "320,800"
-			});
-		}
-  }
+    @Component({
+        components: {
+            HelloWorld,
+            DataView,
+        },
+    })
+    export default class App extends Vue {
+        private pageData = {
+            local: pageData
+        };
+        private columns: ColumnType[] = [
+            {
+                fieldName: "name",
+                title: "Full Name",
+                header: { align: AlignType.Left },
+                data: { align: AlignType.Left }
+            },
+            { fieldName: "position", title: "Position" },
+            {
+                fieldName: "age",
+                title: "Age",
+                data: { type: ColumnDataTypeEnum.Number }
+            },
+            { fieldName: "is-married", title: "Is Married" },
+            { fieldName: "start-date", title: "Start Date" },
+            { fieldName: "salary", title: "Salary" },
+        ];
+        private addNewRow() {
+            this.pageData.local.push({
+                "name": "Tiger Nixon",
+                "position": "System Architect",
+                "office": "Edinburgh",
+                "age": 61,
+                "start-date": "2011/04/25",
+                "salary": "320,800"
+            });
+        }
+    }
 </script>
 
 <style lang="scss">

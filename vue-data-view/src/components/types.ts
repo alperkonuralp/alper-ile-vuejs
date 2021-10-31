@@ -9,8 +9,15 @@ export interface ColumnHeaderType {
 	align: AlignType;
 }
 
+export enum ColumnDataTypeEnum {
+	Text,
+	Number,
+	DateTime,
+}
+
 export interface ColumnDataType {
-	align: AlignType;
+	align?: AlignType;
+	type?: ColumnDataTypeEnum;
 }
 
 export interface ColumnType {

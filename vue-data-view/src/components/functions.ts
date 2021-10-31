@@ -1,12 +1,6 @@
 import { AlignType } from './types';
 
+const typeStrings = ["left", "right", "center"];
 export function ConvertAlignTypeToString(alignType: AlignType): string {
-    switch (alignType) {
-        case AlignType.Left:
-            return "left";
-        case AlignType.Right:
-            return "right";
-        case AlignType.Center:
-            return "center";
-    }
+    return typeStrings[alignType];
 }

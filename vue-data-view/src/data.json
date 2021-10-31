@@ -5,7 +5,8 @@
     "office": "Edinburgh",
     "age": 61,
     "start-date": "2011/04/25",
-    "salary": "320,800"
+    "salary": 320800,
+    "is-married": true
   },
   {
     "name": "Garrett Winters",
@@ -13,7 +14,8 @@
     "office": "Tokyo",
     "age": 63,
     "start-date": "2011/07/25",
-    "salary": "170,750"
+    "salary": 170750,
+    "is-married": false
   },
   {
     "name": "Ashton Cox",
@@ -21,7 +23,8 @@
     "office": "San Francisco",
     "age": 66,
     "start-date": "2009/01/12",
-    "salary": "86,000"
+    "salary": 86000,
+    "is-married": true
   },
   {
     "name": "Cedric Kelly",
@@ -29,7 +32,8 @@
     "office": "Edinburgh",
     "age": 22,
     "start-date": "2012/03/29",
-    "salary": "433,060"
+    "salary": 433060,
+    "is-married": false
   },
   {
     "name": "Airi Satou",
@@ -37,7 +41,8 @@
     "office": "Tokyo",
     "age": 33,
     "start-date": "2008/11/28",
-    "salary": "162,700"
+    "salary": 162700,
+    "is-married": true
   },
   {
     "name": "Brielle Williamson",
@@ -45,7 +50,8 @@
     "office": "New York",
     "age": 61,
     "start-date": "2012/12/02",
-    "salary": "372,000"
+    "salary": 372000,
+    "is-married": false
   },
   {
     "name": "Herrod Chandler",
@@ -53,7 +59,8 @@
     "office": "San Francisco",
     "age": 59,
     "start-date": "2012/08/06",
-    "salary": "137,500"
+    "salary": 137500,
+    "is-married": true
   },
   {
     "name": "Rhona Davidson",
@@ -61,7 +68,8 @@
     "office": "Tokyo",
     "age": 55,
     "start-date": "2010/10/14",
-    "salary": "327,900"
+    "salary": 327900,
+    "is-married": false
   },
   {
     "name": "Colleen Hurst",
@@ -69,7 +77,8 @@
     "office": "San Francisco",
     "age": 39,
     "start-date": "2009/09/15",
-    "salary": "205,500"
+    "salary": 205500,
+    "is-married": true
   },
   {
     "name": "Sonya Frost",
@@ -77,7 +86,8 @@
     "office": "Edinburgh",
     "age": 23,
     "start-date": "2008/12/13",
-    "salary": "103,600"
+    "salary": 103600,
+    "is-married": false
   },
   {
     "name": "Jena Gaines",
@@ -85,7 +95,8 @@
     "office": "London",
     "age": 30,
     "start-date": "2008/12/19",
-    "salary": "90,560"
+    "salary": 90560,
+    "is-married": true
   },
   {
     "name": "Quinn Flynn",
@@ -93,7 +104,8 @@
     "office": "Edinburgh",
     "age": 22,
     "start-date": "2013/03/03",
-    "salary": "342,000"
+    "salary": 342000,
+    "is-married": false
   },
   {
     "name": "Charde Marshall",
@@ -101,7 +113,8 @@
     "office": "San Francisco",
     "age": 36,
     "start-date": "2008/10/16",
-    "salary": "470,600"
+    "salary": 470600,
+    "is-married": true
   },
   {
     "name": "Haley Kennedy",
@@ -109,7 +122,8 @@
     "office": "London",
     "age": 43,
     "start-date": "2012/12/18",
-    "salary": "313,500"
+    "salary": 313500,
+    "is-married": false
   },
   {
     "name": "Tatyana Fitzpatrick",
@@ -117,7 +131,8 @@
     "office": "London",
     "age": 19,
     "start-date": "2010/03/17",
-    "salary": "385,750"
+    "salary": 385750,
+    "is-married": true
   },
   {
     "name": "Michael Silva",
@@ -125,7 +140,8 @@
     "office": "London",
     "age": 66,
     "start-date": "2012/11/27",
-    "salary": "198,500"
+    "salary": 198500,
+    "is-married": false
   },
   {
     "name": "Paul Byrd",
@@ -133,7 +149,8 @@
     "office": "New York",
     "age": 64,
     "start-date": "2010/06/09",
-    "salary": "725,000"
+    "salary": 725000,
+    "is-married": true
   },
   {
     "name": "Gloria Little",
@@ -141,7 +158,8 @@
     "office": "New York",
     "age": 59,
     "start-date": "2009/04/10",
-    "salary": "237,500"
+    "salary": 237500,
+    "is-married": false
   },
   {
     "name": "Bradley Greer",
@@ -149,7 +167,8 @@
     "office": "London",
     "age": 41,
     "start-date": "2012/10/13",
-    "salary": "132,000"
+    "salary": 132000,
+    "is-married": true
   },
   {
     "name": "Dai Rios",
@@ -157,7 +176,8 @@
     "office": "Edinburgh",
     "age": 35,
     "start-date": "2012/09/26",
-    "salary": "217,500"
+    "salary": 217500,
+    "is-married": false
   },
   {
     "name": "Jenette Caldwell",
@@ -165,7 +185,8 @@
     "office": "New York",
     "age": 30,
     "start-date": "2011/09/03",
-    "salary": "345,000"
+    "salary": 345000,
+    "is-married": true
   },
   {
     "name": "Yuri Berry",
@@ -173,7 +194,8 @@
     "office": "New York",
     "age": 40,
     "start-date": "2009/06/25",
-    "salary": "675,000"
+    "salary": 675000,
+    "is-married": false
   },
   {
     "name": "Caesar Vance",
@@ -181,7 +203,8 @@
     "office": "New York",
     "age": 21,
     "start-date": "2011/12/12",
-    "salary": "106,450"
+    "salary": 106450,
+    "is-married": true
   },
   {
     "name": "Doris Wilder",
@@ -189,7 +212,8 @@
     "office": "Sydney",
     "age": 23,
     "start-date": "2010/09/20",
-    "salary": "85,600"
+    "salary": 85600,
+    "is-married": false
   },
   {
     "name": "Angelica Ramos",
@@ -197,7 +221,8 @@
     "office": "London",
     "age": 47,
     "start-date": "2009/10/09",
-    "salary": "1,200,000"
+    "salary": 1200000,
+    "is-married": true
   },
   {
     "name": "Gavin Joyce",
@@ -205,7 +230,8 @@
     "office": "Edinburgh",
     "age": 42,
     "start-date": "2010/12/22",
-    "salary": "92,575"
+    "salary": 92575,
+    "is-married": false
   },
   {
     "name": "Jennifer Chang",
@@ -213,7 +239,8 @@
     "office": "Singapore",
     "age": 28,
     "start-date": "2010/11/14",
-    "salary": "357,650"
+    "salary": 357650,
+    "is-married": true
   },
   {
     "name": "Brenden Wagner",
@@ -221,7 +248,8 @@
     "office": "San Francisco",
     "age": 28,
     "start-date": "2011/06/07",
-    "salary": "206,850"
+    "salary": 206850,
+    "is-married": false
   },
   {
     "name": "Fiona Green",
@@ -229,7 +257,8 @@
     "office": "San Francisco",
     "age": 48,
     "start-date": "2010/03/11",
-    "salary": "850,000"
+    "salary": 850000,
+    "is-married": true
   },
   {
     "name": "Shou Itou",
@@ -237,7 +266,8 @@
     "office": "Tokyo",
     "age": 20,
     "start-date": "2011/08/14",
-    "salary": "163,000"
+    "salary": 163000,
+    "is-married": false
   },
   {
     "name": "Michelle House",
@@ -245,7 +275,8 @@
     "office": "Sydney",
     "age": 37,
     "start-date": "2011/06/02",
-    "salary": "95,400"
+    "salary": 95400,
+    "is-married": true
   },
   {
     "name": "Suki Burks",
@@ -253,7 +284,8 @@
     "office": "London",
     "age": 53,
     "start-date": "2009/10/22",
-    "salary": "114,500"
+    "salary": 114500,
+    "is-married": false
   },
   {
     "name": "Prescott Bartlett",
@@ -261,7 +293,8 @@
     "office": "London",
     "age": 27,
     "start-date": "2011/05/07",
-    "salary": "145,000"
+    "salary": 145000,
+    "is-married": true
   },
   {
     "name": "Gavin Cortez",
@@ -269,7 +302,8 @@
     "office": "San Francisco",
     "age": 22,
     "start-date": "2008/10/26",
-    "salary": "235,500"
+    "salary": 235500,
+    "is-married": false
   },
   {
     "name": "Martena Mccray",
@@ -277,7 +311,8 @@
     "office": "Edinburgh",
     "age": 46,
     "start-date": "2011/03/09",
-    "salary": "324,050"
+    "salary": 324050,
+    "is-married": true
   },
   {
     "name": "Unity Butler",
@@ -285,7 +320,8 @@
     "office": "San Francisco",
     "age": 47,
     "start-date": "2009/12/09",
-    "salary": "85,675"
+    "salary": 85675,
+    "is-married": false
   },
   {
     "name": "Howard Hatfield",
@@ -293,7 +329,8 @@
     "office": "San Francisco",
     "age": 51,
     "start-date": "2008/12/16",
-    "salary": "164,500"
+    "salary": 164500,
+    "is-married": true
   },
   {
     "name": "Hope Fuentes",
@@ -301,7 +338,8 @@
     "office": "San Francisco",
     "age": 41,
     "start-date": "2010/02/12",
-    "salary": "109,850"
+    "salary": 109850,
+    "is-married": false
   },
   {
     "name": "Vivian Harrell",
@@ -309,7 +347,8 @@
     "office": "San Francisco",
     "age": 62,
     "start-date": "2009/02/14",
-    "salary": "452,500"
+    "salary": 452500,
+    "is-married": true
   },
   {
     "name": "Timothy Mooney",
@@ -317,7 +356,8 @@
     "office": "London",
     "age": 37,
     "start-date": "2008/12/11",
-    "salary": "136,200"
+    "salary": 136200,
+    "is-married": false
   },
   {
     "name": "Jackson Bradshaw",
@@ -325,7 +365,8 @@
     "office": "New York",
     "age": 65,
     "start-date": "2008/09/26",
-    "salary": "645,750"
+    "salary": 645750,
+    "is-married": true
   },
   {
     "name": "Olivia Liang",
@@ -333,7 +374,8 @@
     "office": "Singapore",
     "age": 64,
     "start-date": "2011/02/03",
-    "salary": "234,500"
+    "salary": 234500,
+    "is-married": false
   },
   {
     "name": "Bruno Nash",
@@ -341,7 +383,8 @@
     "office": "London",
     "age": 38,
     "start-date": "2011/05/03",
-    "salary": "163,500"
+    "salary": 163500,
+    "is-married": true
   },
   {
     "name": "Sakura Yamamoto",
@@ -349,7 +392,8 @@
     "office": "Tokyo",
     "age": 37,
     "start-date": "2009/08/19",
-    "salary": "139,575"
+    "salary": 139575,
+    "is-married": false
   },
   {
     "name": "Thor Walton",
@@ -357,7 +401,8 @@
     "office": "New York",
     "age": 61,
     "start-date": "2013/08/11",
-    "salary": "98,540"
+    "salary": 98540,
+    "is-married": true
   },
   {
     "name": "Finn Camacho",
@@ -365,7 +410,8 @@
     "office": "San Francisco",
     "age": 47,
     "start-date": "2009/07/07",
-    "salary": "87,500"
+    "salary": 87500,
+    "is-married": false
   },
   {
     "name": "Serge Baldwin",
@@ -373,7 +419,8 @@
     "office": "Singapore",
     "age": 64,
     "start-date": "2012/04/09",
-    "salary": "138,575"
+    "salary": 138575,
+    "is-married": true
   },
   {
     "name": "Zenaida Frank",
@@ -381,7 +428,8 @@
     "office": "New York",
     "age": 63,
     "start-date": "2010/01/04",
-    "salary": "125,250"
+    "salary": 125250,
+    "is-married": false
   },
   {
     "name": "Zorita Serrano",
@@ -389,7 +437,8 @@
     "office": "San Francisco",
     "age": 56,
     "start-date": "2012/06/01",
-    "salary": "115,000"
+    "salary": 115000,
+    "is-married": true
   },
   {
     "name": "Jennifer Acosta",
@@ -397,7 +446,8 @@
     "office": "Edinburgh",
     "age": 43,
     "start-date": "2013/02/01",
-    "salary": "75,650"
+    "salary": 75650,
+    "is-married": false
   },
   {
     "name": "Cara Stevens",
@@ -405,7 +455,8 @@
     "office": "New York",
     "age": 46,
     "start-date": "2011/12/06",
-    "salary": "145,600"
+    "salary": 145600,
+    "is-married": true
   },
   {
     "name": "Hermione Butler",
@@ -413,7 +464,8 @@
     "office": "London",
     "age": 47,
     "start-date": "2011/03/21",
-    "salary": "356,250"
+    "salary": 356250,
+    "is-married": false
   },
   {
     "name": "Lael Greer",
@@ -421,7 +473,8 @@
     "office": "London",
     "age": 21,
     "start-date": "2009/02/27",
-    "salary": "103,500"
+    "salary": 103500,
+    "is-married": true
   },
   {
     "name": "Jonas Alexander",
@@ -429,7 +482,8 @@
     "office": "San Francisco",
     "age": 30,
     "start-date": "2010/07/14",
-    "salary": "86,500"
+    "salary": 86500,
+    "is-married": false
   },
   {
     "name": "Shad Decker",
@@ -437,7 +491,8 @@
     "office": "Edinburgh",
     "age": 51,
     "start-date": "2008/11/13",
-    "salary": "183,000"
+    "salary": 183000,
+    "is-married": true
   },
   {
     "name": "Michael Bruce",
@@ -445,7 +500,8 @@
     "office": "Singapore",
     "age": 29,
     "start-date": "2011/06/27",
-    "salary": "183,000"
+    "salary": 183000,
+    "is-married": false
   },
   {
     "name": "Donna Snider",
@@ -453,6 +509,7 @@
     "office": "New York",
     "age": 27,
     "start-date": "2011/01/25",
-    "salary": "112,000"
+    "salary": 112000,
+    "is-married": true
   }
 ]
