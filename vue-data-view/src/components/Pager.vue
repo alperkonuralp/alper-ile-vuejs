@@ -11,17 +11,15 @@
 			<span>Showing {{startRowIndex}} to {{finishRowIndex}} of {{totalRowCount}} entries</span>
 		</div>
 		<div class="pager-right">
-			<PagerSelector 
-										 :pagerType="pagerType"
-										 @update:pagerType="pagerTypeChanged"/>
-			<SimplePager v-if="isSimple"
-									 :pageIndex="pageIndex"
-									 @update:pageIndex="pageIndexChanged"
-									 :totalPageCount="totalPageCount" />
-			<DropDownPager v-if="isDropDown"
-										 :pageIndex="pageIndex"
-										 @update:pageIndex="pageIndexChanged"
-										 :totalPageCount="totalPageCount" />
+			<PagerSelector  v-if="showPagerSelector"
+							:pagerType="pagerType"
+							@update:pagerType="pagerTypeChanged"/>
+
+			<component :is="pagerComponent" 
+					   :pageIndex="pageIndex"
+					   @update:pageIndex="pageIndexChanged"
+					   :totalPageCount="totalPageCount" />
+			
 			<div class="clear"></div>
 		</div>
 		<div class="clear"></div>
@@ -47,6 +45,12 @@
 		})
 		private pagerType!: PagerType;
 
+		@Prop({ required: false, type: String, default: () => "" })
+		private customPagerComponentName!: string;
+
+		@Prop({ required: false, type: Boolean, default: () => true })
+		private showPagerSelector!: boolean;
+
 		@Prop({ required: false, type: Array })
 		private pageSizes!: number[];
 
@@ -71,12 +75,20 @@
 			// boþ
 		}
 
-		private get isSimple(): boolean {
-			return this.pagerType == PagerType.SimplePager;
-		}
+		private get pagerComponent(): string {
+            switch (this.pagerType) {
+				case PagerType.SimplePager:
+					return "SimplePager";
 
-		private get isDropDown(): boolean {
-			return this.pagerType == PagerType.DropDownPager;
+				case PagerType.DropDownPager:
+					return "DropDownPager";
+
+				case PagerType.Custom:
+					return this.customPagerComponentName;
+
+				default:
+                    return "SimplePager";
+            }
 		}
 
 		private get totalPageCount(): number {

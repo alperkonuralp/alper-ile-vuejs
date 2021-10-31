@@ -23,6 +23,7 @@ export interface ColumnType {
 export enum PagerType {
 	SimplePager,
 	DropDownPager,
+	Custom,
 }
 
 export type DataRow = Record<string, any>;

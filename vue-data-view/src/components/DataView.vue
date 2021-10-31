@@ -29,101 +29,104 @@
                :pageSize.sync="dataService.pageSize"
                :pageIndex.sync="dataService.pageIndex"
                :totalRowCount="dataService.totalRowCount"
-              
+               :showPagerSelector="showPagerSelector"
                />
     </div>
 </template>
 
 <script lang="ts">
-  import { Component, Prop, Vue, Watch } from "vue-property-decorator";
-  import { ColumnType, PagerType, DataSource, DataRow } from './types';
-  import HeaderColumn from "./HeaderColumn.vue";
-  import DataColumn from "./DataColumn.vue";
-  import Pager from "./Pager.vue";
-  import SearchBar from "./SearchBar.vue";
-  import TitleBar from "./TitleBar.vue";
-  import { DataService } from './data-service';
+    import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+    import { ColumnType, PagerType, DataSource, DataRow } from './types';
+    import HeaderColumn from "./HeaderColumn.vue";
+    import DataColumn from "./DataColumn.vue";
+    import Pager from "./Pager.vue";
+    import SearchBar from "./SearchBar.vue";
+    import TitleBar from "./TitleBar.vue";
+    import { DataService } from './data-service';
 
-  @Component({
-    components: {
-      HeaderColumn,
-      DataColumn,
-      Pager,
-      SearchBar,
-      TitleBar,
-    }
-  })
-  export default class DataView extends Vue {
-    // Data
-    private pageData: DataRow[] = [];
-    private dataService: DataService = new DataService();
-    private innerPagerType: PagerType = PagerType.SimplePager;
-
-    // Props
-    @Prop({ required: true, type: Array })
-    private columnList!: ColumnType[];
-
-    @Prop({ required: false, type: Object })
-    private dataSource!: DataSource;
-
-    @Prop({ required: false, type: String, default: () => '' })
-    private title!: string;
-
-    @Prop({ required: false, type: Boolean, default: () => false })
-    private showSearchBar!: boolean;
-
-    @Prop({ required: false, type: Boolean, default: () => true })
-    private showPager!: boolean;
-
-    @Prop({
-      required: false,
-      type: Number,
-      default: () => PagerType.SimplePager,
+    @Component({
+        components: {
+            HeaderColumn,
+            DataColumn,
+            Pager,
+            SearchBar,
+            TitleBar,
+        }
     })
-    private pagerType!: PagerType;
+    export default class DataView extends Vue {
+        // Data
+        private pageData: DataRow[] = [];
+        private dataService: DataService = new DataService();
+        private innerPagerType: PagerType = PagerType.SimplePager;
 
-    @Prop({ required: false, type: Array, default: () => [10,25,50,100]})
-    private pageSizes!: number[];
+        // Props
+        @Prop({ required: true, type: Array })
+        private columnList!: ColumnType[];
 
-    private mounted() {
-      this.dataService.dataSource = this.dataSource;
-      this.innerPagerType = this.pagerType;
+        @Prop({ required: false, type: Object })
+        private dataSource!: DataSource;
 
-      this.refresh();
+        @Prop({ required: false, type: String, default: () => '' })
+        private title!: string;
+
+        @Prop({ required: false, type: Boolean, default: () => false })
+        private showSearchBar!: boolean;
+
+        @Prop({ required: false, type: Boolean, default: () => true })
+        private showPager!: boolean;
+
+        @Prop({ required: false, type: Boolean, default: () => true })
+        private showPagerSelector!: boolean;
+
+        @Prop({
+            required: false,
+            type: Number,
+            default: () => PagerType.SimplePager,
+        })
+        private pagerType!: PagerType;
+
+        @Prop({ required: false, type: Array, default: () => [10, 25, 50, 100] })
+        private pageSizes!: number[];
+
+        private mounted() {
+            this.dataService.dataSource = this.dataSource;
+            this.innerPagerType = this.pagerType;
+
+            this.refresh();
+        }
+
+        private refresh() {
+            this.pageData = this.dataService.getPageData();
+        }
+
+        @Watch("dataSource", { deep: true })
+        private dataSourceChanged(newDataSource: DataSource) {
+            if (this.dataService.dataSource !== newDataSource) {
+                this.dataService.dataSource = newDataSource;
+            }
+            this.refresh();
+        }
+
+        @Watch("dataService.pageSize")
+        private pageSizeChanged() {
+            this.refresh();
+        }
+
+        @Watch("dataService.pageIndex")
+        private pageIndexChanged() {
+            this.refresh();
+        }
+
+        @Watch("pagerType")
+        private pagerTypeChanged(pagerType: PagerType) {
+            this.innerPagerType = pagerType;
+        }
+
+        private updatePagerType(newPagerType: PagerType) {
+            this.innerPagerType = newPagerType;
+            this.$emit("update:pagerType", newPagerType);
+        }
     }
-
-    private refresh() {
-      this.pageData = this.dataService.getPageData();
-    }
-
-    @Watch("dataSource", { deep: true })
-    private dataSourceChanged(newDataSource: DataSource) {
-      if (this.dataService.dataSource !== newDataSource) {
-        this.dataService.dataSource = newDataSource;
-      }
-      this.refresh();
-    }
-
-    @Watch("dataService.pageSize")
-    private pageSizeChanged() {
-      this.refresh();
-    }
-
-    @Watch("dataService.pageIndex")
-    private pageIndexChanged() {
-      this.refresh();
-    }
-
-    @Watch("pagerType")
-    private pagerTypeChanged(pagerType: PagerType) {
-      this.innerPagerType = pagerType;
-    }
-
-    private updatePagerType(newPagerType: PagerType) {
-      this.innerPagerType = newPagerType;
-      this.$emit("update:pagerType", newPagerType);
-    }
-  }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

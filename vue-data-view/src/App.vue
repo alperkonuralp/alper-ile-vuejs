@@ -7,6 +7,7 @@
                 title="Data View V:1.0"
                 showSearchBar
                 showPager
+                :showPagerSelector="false"
                 :pagerType="0"/>
       <table id="example" class="display" style="width:100%">
           <thead>
