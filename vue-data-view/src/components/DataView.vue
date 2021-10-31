@@ -4,7 +4,8 @@
         <SearchBar v-if="showSearchBar" />
         <table style="width:100%">
             <thead>
-                <tr>
+                <tr class="header-row">
+                    <td v-if="showIndexColumn">#</td>
                     <HeaderColumn v-for="column in columnList" 
                                   :key="column.fieldName"
                                   :column="column"></HeaderColumn>
@@ -12,7 +13,11 @@
             </thead>
             <tbody>
                 <tr v-for="(row, index) in pageData"
-                    :key="index">
+                    :key="index"
+                    class="data-row">
+
+                    <td v-if="showIndexColumn">{{startRowIndex + index}}</td>
+
                     <DataColumn v-for="column in columnList"
                                 :key="'' + index + '-' + column.fieldName"
                                 :column="column"
@@ -88,6 +93,13 @@
         @Prop({ required: false, type: Array, default: () => [10, 25, 50, 100] })
         private pageSizes!: number[];
 
+        @Prop({ required: false, type: Boolean, default: () => true })
+        private showIndexColumn!: boolean;
+
+        private get startRowIndex(): number {
+            return (this.dataService.pageIndex - 1) * this.dataService.pageSize + 1;
+        }
+
         private mounted() {
             this.dataService.dataSource = this.dataSource;
             this.innerPagerType = this.pagerType;
@@ -131,5 +143,24 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-    .data-view{}
+    .data-view {
+
+        tr.header-row {
+            background-color: #ddd;
+        }
+
+        tr.data-row {
+            background-color: #eeeeee;
+            cursor: pointer;
+
+            &:nth-child(odd) {
+                background-color: #fff;
+            }
+
+            &:hover {
+                background-color: #ccc;
+                color: forestgreen;
+            }
+        }
+    }
 </style>
