@@ -1,12 +1,13 @@
 <template>
-    <span>
+    <td :class="[...dataClass, 'text-column']">
         {{ row[column.fieldName] }}
-    </span>
+    </td>
 </template>
 
 <script lang="ts">
     import { Component, Prop, Vue } from "vue-property-decorator";
-    import { ColumnType } from '../types';
+    import { ColumnType, AlignType, ColumnDataTypeEnum } from '../types';
+    import { ConvertAlignTypeToString } from '../functions';
 
     @Component
     export default class TextColumn extends Vue {
@@ -15,6 +16,13 @@
 
         @Prop({ required: true, type: Object })
         private row!: Record<string, any>;
+
+        private get dataClass() {
+            if (this.column.data && this.column.data.align) {
+                return [ConvertAlignTypeToString(this.column.data.align)];
+            }
+            return ["text-left"];
+        }
     }
 </script>
 

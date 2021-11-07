@@ -18,11 +18,12 @@
 
                     <td v-if="showIndexColumn">{{startRowIndex + index}}</td>
 
-                    <DataColumn v-for="column in columnList"
-                                :key="'' + index + '-' + column.fieldName"
-                                :column="column"
-                                :row="row">
-                    </DataColumn>
+                    <component v-for="column in columnList"
+                               :key="'' + index + '-' + column.fieldName"
+                               :is="columnTypeComponentName(column)"
+                               :column="column"
+                               :row="row"
+                               />
                 </tr>
             </tbody>
         </table>
@@ -43,19 +44,20 @@
     import { Component, Prop, Vue, Watch } from "vue-property-decorator";
     import { ColumnType, PagerType, DataSource, DataRow } from './types';
     import HeaderColumn from "./HeaderColumn.vue";
-    import DataColumn from "./DataColumn.vue";
     import Pager from "./Pager.vue";
     import SearchBar from "./SearchBar.vue";
     import TitleBar from "./TitleBar.vue";
     import { DataService } from './data-service';
+    import { ColumnNameList, TextColumn, NumberColumn } from './columns';
 
     @Component({
         components: {
             HeaderColumn,
-            DataColumn,
             Pager,
             SearchBar,
             TitleBar,
+            TextColumn,
+            NumberColumn,
         }
     })
     export default class DataView extends Vue {
@@ -109,6 +111,14 @@
 
         private refresh() {
             this.pageData = this.dataService.getPageData();
+        }
+
+
+        private columnTypeComponentName(column: ColumnType) {
+            if (column.data && column.data.type) {
+                return ColumnNameList[column.data.type];
+            }
+            return ColumnNameList[0];
         }
 
         @Watch("dataSource", { deep: true })

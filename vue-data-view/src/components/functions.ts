@@ -1,6 +1,6 @@
 import { AlignType } from './types';
 
-const typeStrings = ["left", "right", "center"];
+const typeStrings = ["text-left", "text-right", "text-center"];
 export function ConvertAlignTypeToString(alignType: AlignType): string {
     return typeStrings[alignType];
 }
