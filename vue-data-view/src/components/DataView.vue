@@ -48,7 +48,7 @@
     import SearchBar from "./SearchBar.vue";
     import TitleBar from "./TitleBar.vue";
     import { DataService } from './data-service';
-    import { ColumnNameList, TextColumn, NumberColumn, BooleanColumn } from './columns';
+    import { ColumnNameList, TextColumn, NumberColumn, BooleanColumn, DateTimeColumn } from './columns';
 
     @Component({
         components: {
@@ -59,6 +59,7 @@
             TextColumn,
             NumberColumn,
             BooleanColumn,
+            DateTimeColumn,
         }
     })
     export default class DataView extends Vue {

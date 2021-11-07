@@ -26,10 +26,21 @@ export class DefaultBooleanColumnDataType implements BooleanColumnDataType {
 	public falseText = "Hayır";
 }
 
+export interface DateTimeColumnDataType {
+	importFormat: string;
+	exportFormat: string;
+}
+
+export class DefaultDateTimeColumnDataType implements DateTimeColumnDataType {
+	public importFormat = "YYYY/MM/DD";
+	public exportFormat = "DD.MM.YYYY";
+}
+
 export interface ColumnDataType {
 	align?: AlignType;
 	type?: ColumnDataTypeEnum;
 	booleanColumn?: BooleanColumnDataType;
+	dateTimeColumn?: DateTimeColumnDataType;
 }
 
 export interface ColumnType {

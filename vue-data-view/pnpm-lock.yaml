@@ -13,6 +13,7 @@ specifiers:
   eslint-plugin-prettier: ^3.3.1
   eslint-plugin-vue: ^6.2.2
   lodash: ^4.17.21
+  moment: ^2.29.1
   prettier: ^2.2.1
   sass: ^1.26.5
   sass-loader: ^8.0.2
@@ -25,6 +26,7 @@ specifiers:
 dependencies:
   '@types/lodash': 4.14.176
   lodash: 4.17.21
+  moment: 2.29.1
   vue: 2.6.14
   vue-class-component: 7.2.6_vue@2.6.14
   vue-property-decorator: 9.1.2_cc5a81cd4d75b7f9736a3e9b263f47e5
@@ -4745,6 +4747,10 @@ packages:
     dependencies:
       minimist: 1.2.5
     dev: true
+
+  /moment/2.29.1:
+    resolution: {integrity: sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==}
+    dev: false
 
   /move-concurrently/1.0.1:
     resolution: {integrity: sha1-viwAX9oy4LKa8fBdfEszIUxwH5I=}

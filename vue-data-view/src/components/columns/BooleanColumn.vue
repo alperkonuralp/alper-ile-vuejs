@@ -1,5 +1,5 @@
 ﻿<template>
-    <td :class="[...dataClass, 'text-column']">
+    <td :class="[...dataClass, 'boolean-column']">
         {{ dataValue }}
     </td>
 </template>

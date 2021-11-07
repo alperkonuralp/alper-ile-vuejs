@@ -505,13 +505,13 @@
                 fieldName: "name",
                 title: "Full Name",
                 header: { align: AlignType.Left },
-                data: { align: AlignType.Left }
+                data: { align: AlignType.Left },
             },
             { fieldName: "position", title: "Position" },
             {
                 fieldName: "age",
                 title: "Age",
-                data: { type: ColumnDataTypeEnum.Number }
+                data: { type: ColumnDataTypeEnum.Number },
             },
             {
                 fieldName: "is-married",
@@ -521,10 +521,20 @@
                     booleanColumn: {
                         falseText: "Bekar",
                         trueText: "Evli",
-                    }
-                }
+                    },
+                },
             },
-            { fieldName: "start-date", title: "Start Date" },
+            {
+                fieldName: "start-date",
+                title: "Start Date",
+                data: {
+                    type: ColumnDataTypeEnum.DateTime,
+                    dateTimeColumn: {
+                        importFormat: 'YYYY/MM/DD',
+                        exportFormat: 'MM/DD/YYYY',
+                    },
+                },
+            },
             { fieldName: "salary", title: "Salary" },
         ];
         private addNewRow() {
