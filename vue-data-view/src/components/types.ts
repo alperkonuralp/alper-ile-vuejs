@@ -1,4 +1,4 @@
-
+﻿
 export enum AlignType {
 	Left,
 	Right,
@@ -12,12 +12,24 @@ export interface ColumnHeaderType {
 export enum ColumnDataTypeEnum {
 	Text,
 	Number,
+	Boolean,
 	DateTime,
+}
+
+export interface BooleanColumnDataType {
+	trueText: string;
+	falseText: string;
+}
+
+export class DefaultBooleanColumnDataType implements BooleanColumnDataType {
+	public trueText = "Evet";
+	public falseText = "Hayır";
 }
 
 export interface ColumnDataType {
 	align?: AlignType;
 	type?: ColumnDataTypeEnum;
+	booleanColumn?: BooleanColumnDataType;
 }
 
 export interface ColumnType {

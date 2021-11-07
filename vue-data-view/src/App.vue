@@ -513,7 +513,17 @@
                 title: "Age",
                 data: { type: ColumnDataTypeEnum.Number }
             },
-            { fieldName: "is-married", title: "Is Married" },
+            {
+                fieldName: "is-married",
+                title: "Is Married",
+                data: {
+                    type: ColumnDataTypeEnum.Boolean,
+                    booleanColumn: {
+                        falseText: "Bekar",
+                        trueText: "Evli",
+                    }
+                }
+            },
             { fieldName: "start-date", title: "Start Date" },
             { fieldName: "salary", title: "Salary" },
         ];
