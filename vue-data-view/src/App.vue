@@ -8,7 +8,11 @@
                 showSearchBar
                 showPager
                 :showPagerSelector="false"
-                :pagerType="0"/>
+                :pagerType="0">
+          <template v-slot:column_template_1="tcv">
+              {{ tcv.column.columnName }}
+          </template>
+      </DataView>
       <table id="example" class="display" style="width:100%">
           <thead>
               <tr>
@@ -536,16 +540,24 @@
                 },
             },
             { fieldName: "salary", title: "Salary" },
+            {
+                columnName: 'template_1',
+                fieldName: "",
+                title: "Template",
+                data: {
+                    type: ColumnDataTypeEnum.Template,
+                },
+            },
         ];
         private addNewRow() {
-            this.pageData.local.push({
-                "name": "Tiger Nixon",
-                "position": "System Architect",
-                "office": "Edinburgh",
-                "age": 61,
-                "start-date": "2011/04/25",
-                "salary": "320,800"
-            });
+            //this.pageData.local.push({
+            //    "name": "Tiger Nixon",
+            //    "position": "System Architect",
+            //    "office": "Edinburgh",
+            //    "age": 61,
+            //    "start-date": "2011/04/25",
+            //    "salary": 320800
+            //});
         }
     }
 </script>

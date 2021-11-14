@@ -1,5 +1,5 @@
 ﻿<template>
-    <td :class="[...dataClass, 'boolean-column']">
+    <td :class="[...dataClass, 'boolean-checkbox-column']">
         <input type="checkbox" readonly disabled v-model="dataValue" v-if="dataValue != undefined" />
     </td>
 </template>

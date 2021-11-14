@@ -1,16 +1,20 @@
 <template>
-    <td :class="[...dataClass, 'text-column']">
-        {{ row[column.fieldName] }}
+    <td :class="[...dataClass, 'template-column']">
+        <slot :name="slotName" v-bind="{column, row}">
+        </slot>
     </td>
 </template>
 
 <script lang="ts">
+    import { mixins } from 'vue-class-component';
     import { Component, Prop, Vue } from "vue-property-decorator";
-    import { ColumnType, AlignType, ColumnDataTypeEnum } from '../types';
+    import { ColumnType } from '../types';
     import { ConvertAlignTypeToString } from '../functions';
+    import _ from 'lodash';
+    import { TemplateColumnMixin } from '../template-column-mixin';
 
     @Component
-    export default class TemplateColumn extends Vue {
+    export default class TemplateColumn extends mixins(TemplateColumnMixin) {
         @Prop({ required: true, type: Object })
         private column!: ColumnType;
 
@@ -22,6 +26,10 @@
                 return [ConvertAlignTypeToString(this.column.data.align)];
             }
             return ["text-left"];
+        }
+
+        private get slotName(): string {
+            return this.getSlotName(this.column);
         }
     }
 </script>

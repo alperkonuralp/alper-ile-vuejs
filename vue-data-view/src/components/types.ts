@@ -15,6 +15,8 @@ export enum ColumnDataTypeEnum {
 	Boolean,
 	DateTime,
 	BooleanCheckbox,
+	Template,
+	Custom,
 }
 
 export interface BooleanColumnDataType {
@@ -45,6 +47,7 @@ export interface ColumnDataType {
 }
 
 export interface ColumnType {
+	columnName?: string;
 	fieldName: string;
 	title: string;
 	header?: ColumnHeaderType;

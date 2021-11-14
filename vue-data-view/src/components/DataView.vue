@@ -23,7 +23,12 @@
                                :is="columnTypeComponentName(column)"
                                :column="column"
                                :row="row"
-                               />
+                               >
+                        <template v-slot:[getSlotName(column)]="tcv">
+                            <slot :name="getSlotName(column)" v-bind="tcv">
+                            </slot>
+                        </template>
+                    </component>
                 </tr>
             </tbody>
         </table>
@@ -41,6 +46,7 @@
 </template>
 
 <script lang="ts">
+    import { mixins } from 'vue-class-component';
     import { Component, Prop, Vue, Watch } from "vue-property-decorator";
     import { ColumnType, PagerType, DataSource, DataRow } from './types';
     import HeaderColumn from "./HeaderColumn.vue";
@@ -52,6 +58,7 @@
         ColumnNameList, TextColumn, NumberColumn, BooleanColumn, DateTimeColumn, BooleanCheckboxColumn,
         TemplateColumn,
     } from './columns';
+    import { TemplateColumnMixin } from './template-column-mixin';
 
     @Component({
         components: {
@@ -67,7 +74,7 @@
             TemplateColumn,
         }
     })
-    export default class DataView extends Vue {
+    export default class DataView extends mixins(TemplateColumnMixin) {
         // Data
         private pageData: DataRow[] = [];
         private dataService: DataService = new DataService();
