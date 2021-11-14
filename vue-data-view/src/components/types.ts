@@ -14,6 +14,7 @@ export enum ColumnDataTypeEnum {
 	Number,
 	Boolean,
 	DateTime,
+	BooleanCheckbox,
 }
 
 export interface BooleanColumnDataType {

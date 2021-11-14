@@ -517,7 +517,7 @@
                 fieldName: "is-married",
                 title: "Is Married",
                 data: {
-                    type: ColumnDataTypeEnum.Boolean,
+                    type: ColumnDataTypeEnum.BooleanCheckbox,
                     booleanColumn: {
                         falseText: "Bekar",
                         trueText: "Evli",
