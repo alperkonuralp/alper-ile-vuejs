@@ -1,18 +1,20 @@
 <template>
   <div id="app">
     <button @click="addNewRow">Add New Row</button>
-      <DataView 
-                :columnList="columns" 
-                :dataSource="pageData" 
-                title="Data View V:1.0"
-                showSearchBar
-                showPager
-                :showPagerSelector="false"
-                :pagerType="0">
-          <template v-slot:column_template_1="tcv">
-              {{ tcv.column.columnName }}
-          </template>
-      </DataView>
+    <DataView :columnList="columns"
+              :dataSource="pageData"
+              title="Data View V:1.0"
+              showSearchBar
+              showPager
+              :showPagerSelector="false"
+              :pagerType="0">
+        <template v-slot:column_template_1="tcv">
+            {{ tcv.column.columnName }}
+        </template>
+        <template v-slot:column_template_2="tcv">
+            T2: {{ tcv.row.name }}
+        </template>
+    </DataView>
       <table id="example" class="display" style="width:100%">
           <thead>
               <tr>
@@ -544,6 +546,23 @@
                 columnName: 'template_1',
                 fieldName: "",
                 title: "Template",
+                data: {
+                    type: ColumnDataTypeEnum.Template,
+                },
+            },
+            {
+                columnName: 'custom_1',
+                fieldName: "",
+                title: "Custom",
+                data: {
+                    type: ColumnDataTypeEnum.Custom,
+                    customComponentName: 'Deneme',
+                },
+            },
+            {
+                columnName: 'template_2',
+                fieldName: "",
+                title: "Template 2",
                 data: {
                     type: ColumnDataTypeEnum.Template,
                 },

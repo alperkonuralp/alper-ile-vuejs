@@ -4,6 +4,7 @@ export { default as BooleanColumn } from './BooleanColumn.vue';
 export { default as DateTimeColumn } from './DateTimeColumn.vue';
 export { default as BooleanCheckboxColumn } from './BooleanCheckboxColumn.vue';
 export { default as TemplateColumn } from './TemplateColumn.vue';
+export { default as CustomColumn } from './CustomColumn.vue';
 
 export const ColumnNameList = [
     'TextColumn',
@@ -12,4 +13,5 @@ export const ColumnNameList = [
     'DateTimeColumn',
     'BooleanCheckboxColumn',
     'TemplateColumn',
+    'CustomColumn'
 ];

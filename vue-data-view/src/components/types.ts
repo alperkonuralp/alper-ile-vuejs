@@ -44,6 +44,7 @@ export interface ColumnDataType {
 	type?: ColumnDataTypeEnum;
 	booleanColumn?: BooleanColumnDataType;
 	dateTimeColumn?: DateTimeColumnDataType;
+	customComponentName?: string;
 }
 
 export interface ColumnType {

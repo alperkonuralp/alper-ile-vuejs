@@ -7,7 +7,7 @@
                 <tr class="header-row">
                     <td v-if="showIndexColumn">#</td>
                     <HeaderColumn v-for="column in columnList" 
-                                  :key="column.fieldName"
+                                  :key="'header-' + (column.fieldName || column.columnName || column.data.customComponentName)"
                                   :column="column"></HeaderColumn>
                 </tr>
             </thead>
@@ -19,7 +19,7 @@
                     <td v-if="showIndexColumn">{{startRowIndex + index}}</td>
 
                     <component v-for="column in columnList"
-                               :key="'' + index + '-' + column.fieldName"
+                               :key="'' + index + '-' + (column.fieldName || column.columnName || column.data.customComponentName)"
                                :is="columnTypeComponentName(column)"
                                :column="column"
                                :row="row"
@@ -48,7 +48,7 @@
 <script lang="ts">
     import { mixins } from 'vue-class-component';
     import { Component, Prop, Vue, Watch } from "vue-property-decorator";
-    import { ColumnType, PagerType, DataSource, DataRow } from './types';
+    import { ColumnType, PagerType, DataSource, DataRow, ColumnDataTypeEnum } from './types';
     import HeaderColumn from "./HeaderColumn.vue";
     import Pager from "./Pager.vue";
     import SearchBar from "./SearchBar.vue";
@@ -56,7 +56,7 @@
     import { DataService } from './data-service';
     import {
         ColumnNameList, TextColumn, NumberColumn, BooleanColumn, DateTimeColumn, BooleanCheckboxColumn,
-        TemplateColumn,
+        TemplateColumn, CustomColumn,
     } from './columns';
     import { TemplateColumnMixin } from './template-column-mixin';
 
@@ -72,6 +72,7 @@
             DateTimeColumn,
             BooleanCheckboxColumn,
             TemplateColumn,
+            CustomColumn,
         }
     })
     export default class DataView extends mixins(TemplateColumnMixin) {
