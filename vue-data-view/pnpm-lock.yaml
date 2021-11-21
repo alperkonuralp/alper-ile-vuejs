@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@mdi/js': ^6.5.95
   '@types/lodash': ^4.14.177
   '@typescript-eslint/eslint-plugin': ^5.4.0
   '@typescript-eslint/parser': ^5.4.0
@@ -13,6 +14,7 @@ specifiers:
   eslint-plugin-prettier: ^4.0.0
   eslint-plugin-vue: ^8.1.1
   lodash: ^4.17.21
+  mdi-vue: ^3.0.12
   moment: ^2.29.1
   prettier: ^2.4.1
   sass: ^1.43.4
@@ -24,8 +26,10 @@ specifiers:
   vue-template-compiler: ^2.6.14
 
 dependencies:
+  '@mdi/js': 6.5.95
   '@types/lodash': 4.14.177
   lodash: 4.17.21
+  mdi-vue: 3.0.12_vue@2.6.14
   moment: 2.29.1
   vue: 2.6.14
   vue-class-component: 7.2.6_vue@2.6.14
@@ -151,6 +155,10 @@ packages:
       postcss: 7.0.38
       webpack: 4.46.0
     dev: true
+
+  /@mdi/js/6.5.95:
+    resolution: {integrity: sha512-x/bwEoAGP+Mo10Dfk5audNIPi7Yz8ZBrILcbXLW3ShOI/njpgodzpgpC2WYK3D2ZSC392peRRemIFb/JsyzzYQ==}
+    dev: false
 
   /@mrmlnc/readdir-enhanced/2.2.1:
     resolution: {integrity: sha512-bPHp6Ji8b41szTOcaP63VlnbbO5Ny6dwAATtY6JTjh5N2OLrb5Qk/Th5cRkRQhkWCt+EJsYrNB0MiL+Gpn6e3g==}
@@ -4654,6 +4662,15 @@ packages:
       inherits: 2.0.4
       safe-buffer: 5.2.1
     dev: true
+
+  /mdi-vue/3.0.12_vue@2.6.14:
+    resolution: {integrity: sha512-rc4rq99Hafa7v1u3KyfzGRr13v7/AzBvNrcXdhcgPQvj8wYafimbLGfNvQcGiAYZMow40KpXlZuG07132XccKw==}
+    peerDependencies:
+      vue: '*'
+    dependencies:
+      '@mdi/js': 6.5.95
+      vue: 2.6.14
+    dev: false
 
   /mdn-data/2.0.14:
     resolution: {integrity: sha512-dn6wd0uw5GsdswPFfsgMp5NSB0/aDe6fK94YJV/AJDYXL6HVLWBsxeq7js7Ad+mU2K9LAlwpk6kN2D5mwCPVow==}

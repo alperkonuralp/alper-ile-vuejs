@@ -1,7 +1,7 @@
 <template>
     <div class="data-view">
         <TitleBar :title="title" v-if="(title || '') != ''"/>
-        <SearchBar v-if="showSearchBar" />
+        <SearchBar v-if="showSearchBar" :columnList="columnList" />
         <table style="width:100%">
             <thead>
                 <tr class="header-row">

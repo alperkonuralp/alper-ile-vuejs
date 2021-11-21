@@ -1,5 +1,13 @@
 import Vue from "vue";
 import App from "./App.vue";
+
+import mdiVue from 'mdi-vue/v2';
+import * as mdijs from '@mdi/js';
+
+Vue.use(mdiVue, {
+    icons: mdijs
+});
+
 import Deneme from "./Deneme.vue";
 
 import "./main.scss";
