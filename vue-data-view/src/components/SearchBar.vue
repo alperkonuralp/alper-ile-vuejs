@@ -1,23 +1,30 @@
 <template>
-    <div class="search-bar">
+    <div class="search-bar" @blur="showColumnList=false">
         <div class="search-bar-container">
             <mdicon class="icon" name="filter-variant" />
-            <div class="text" 
-                 @focus="showColumnList=true" 
-                 @blur="showColumnList=false"
+            <div class="text"
+                 @focus="showColumnList=true"
                  contenteditable="true">
-                asd
+                <button v-for="(f, i) in filters"
+                        :key="'filter_' + i">
+                    {{ f.column.title }}
+                </button>
             </div>
             <div class="columnList" v-if="showColumnList">
                 <ul>
+                    <li class="header">
+                        Columns
+                    </li>
                     <li v-for="(c, i) in columnList"
-                        :key="i">
+                        :key="i"
+                        class="item"
+                        @click="columnClicked(c)">
                         {{ c.title }}
                     </li>
                 </ul>
             </div>
         </div>
-        
+
         <input type="text" placeholder="Search" />
         <button>Search</button>
     </div>
@@ -31,8 +38,15 @@
     export default class SearchBar extends Vue {
         private showColumnList = false;
 
+        private filters: any[] = [];
+
         @Prop({ required: true, type: Array })
         private columnList!: ColumnType[];
+
+        private columnClicked(column: ColumnType) {
+            this.filters.push({ column });
+            this.showColumnList = false;
+        }
     }
 </script>
 
@@ -69,15 +83,33 @@
                 right: 3px;
             }
 
-            .columnList{
+            .columnList {
                 position: absolute;
-                top: 19px;
+                top: 30px;
+                left: 30px;
                 background: white;
+                padding: 5px 0;
+                border: 1px solid #555;
 
                 ul, li {
                     list-style: none;
-                    margin:0;
-                    padding:0;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                li {
+                    margin: 1px;
+                    padding: 3px 13px;
+
+                    &.header {
+                        font-weight: bold;
+                        cursor: default;
+                    }
+
+                    &.item:hover {
+                        background: #CCC;
+                        cursor: pointer;
+                    }
                 }
             }
         }
