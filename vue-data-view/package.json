@@ -1,6 +1,6 @@
 {
   "name": "vue-data-view",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -8,28 +8,28 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@types/lodash": "^4.14.176",
+    "@types/lodash": "^4.14.177",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
-    "vue": "^2.6.11",
-    "vue-class-component": "^7.2.3",
+    "vue": "^2.6.14",
+    "vue-class-component": "^7.2.6",
     "vue-property-decorator": "^9.1.2"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.32.0",
-    "@typescript-eslint/parser": "^4.32.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-plugin-typescript": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "@vue/cli-plugin-eslint": "~4.5.15",
+    "@vue/cli-plugin-typescript": "~4.5.15",
+    "@vue/cli-service": "~4.5.15",
     "@vue/eslint-config-prettier": "^6.0.0",
-    "@vue/eslint-config-typescript": "^7.0.0",
+    "@vue/eslint-config-typescript": "^8.0.0",
     "eslint": "^6.8.0",
-    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-prettier": "^3.4.1",
     "eslint-plugin-vue": "^6.2.2",
-    "prettier": "^2.2.1",
-    "sass": "^1.26.5",
-    "sass-loader": "^8.0.2",
-    "typescript": "~4.1.6",
-    "vue-template-compiler": "^2.6.11"
+    "prettier": "^2.4.1",
+    "sass": "^1.43.4",
+    "sass-loader": "^9.0.3",
+    "typescript": "~4.5.2",
+    "vue-template-compiler": "^2.6.14"
   }
 }
