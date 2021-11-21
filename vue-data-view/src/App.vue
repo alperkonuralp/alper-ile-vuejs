@@ -556,7 +556,7 @@
                 title: "Custom",
                 data: {
                     type: ColumnDataTypeEnum.Custom,
-                    customComponentName: 'Deneme',
+                    customComponentName: 'Deneme-Component',
                 },
             },
             {

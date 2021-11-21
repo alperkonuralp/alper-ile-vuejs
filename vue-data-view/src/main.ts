@@ -1,11 +1,12 @@
 import Vue from "vue";
 import App from "./App.vue";
-import './main.scss';
 import Deneme from "./Deneme.vue";
+
+import "./main.scss";
 
 Vue.config.productionTip = false;
 
-Vue.component('Deneme', Deneme);
+Vue.component("Deneme-Component", Deneme);
 
 new Vue({
   render: (h) => h(App),
