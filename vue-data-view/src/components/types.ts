@@ -66,3 +66,7 @@ export type DataRow = Record<string, any>;
 export interface DataSource {
 	local: DataRow[];
 }
+
+export interface FilterItem {
+	column: ColumnType;
+}
