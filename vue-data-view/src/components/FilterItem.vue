@@ -13,7 +13,7 @@
     @Component
     export default class FilterItem extends Vue {
 
-        @Prop({ required: true, type: Array })
+        @Prop({ required: true, type: Object })
         private filter!: FilterItemData;
 
         private focus(e: Event) {
@@ -31,12 +31,12 @@
         border-radius: 15px;
         padding: 2px 10px;
         margin: 0 5px;
-        -webkit-box-shadow: 5px 5px 15px 5px #000000;
-        box-shadow: 5px 5px 15px 5px #000000;
+        -webkit-box-shadow: 3px 3px 15px -2px #000000;
+        box-shadow: 3px 3px 15px -2px #000000;
 
         &:hover {
-            -webkit-box-shadow: 5px 5px 15px 2px #000000;
-            box-shadow: 5px 5px 15px 2px #000000;
+            -webkit-box-shadow: 3px 3px 15px -8px #000000;
+            box-shadow: 3px 3px 15px -8px #000000;
         }
     }
 </style>

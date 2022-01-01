@@ -1,9 +1,12 @@
 <template>
     <div class="search-bar" @blur="showColumnList=false">
         <div class="search-bar-container">
-            <span class="icon" @click="focus">
+            <div class="icon">
                 <mdicon name="filter-variant" />
-                <div class="columnList">
+            </div>
+            <div class="add" tabindex="0" @focus="showColumnList = true" @blur="showColumnList = false">
+                <div class="plus-icon"  @click="showColumnList = true"><mdicon name="plus" /></div>
+                <div class="columnList" v-if="showColumnList">
                     <ul>
                         <li class="header">
                             Columns
@@ -16,12 +19,11 @@
                         </li>
                     </ul>
                 </div>
-            </span>
+            </div>
             <div class="text">
                 <FilterItem v-for="(f, i) in filters"
                             :key="'filter_' + i"
                             :filter="f">
-                    {{ f.column.title }}
                 </FilterItem>
             </div>
         </div>
@@ -53,13 +55,6 @@
             this.filters.push({ column });
             this.showColumnList = false;
         }
-
-
-        private focus(e: Event) {
-            //debugger;
-            this.showColumnList = true;
-            e.stopPropagation();
-        }
     }
 </script>
 
@@ -85,16 +80,29 @@
             .icon {
                 position: absolute;
                 left: 5px;
-                top: 3px;
+                top: 5px;
+            }
+
+
+            .add {
+                .plus-icon {
+                    position: absolute;
+                    left: 30px;
+                    top: 5px;
+                    cursor: pointer;
+                                        
+                }
+
 
                 .columnList {
                     position: absolute;
-                    top: 30px;
-                    left: 0px;
+                    top: 25px;
+                    left: 25px;
                     background: white;
                     padding: 5px 0;
                     border: 1px solid #555;
-                    display: none;
+                    z-index: 100;
+                    /*display: none;*/
 
                     ul, li {
                         list-style: none;
@@ -117,16 +125,15 @@
                         }
                     }
                 }
-            
-                &:hover .columnList {
+                /* &:hover .columnList {
                     display: block;
-                }    
+                }*/
             }
 
             .text {
                 //display: inline-block;
                 position: absolute;
-                left: 30px;
+                left: 60px;
                 top: 7px;
                 right: 3px;
             }
